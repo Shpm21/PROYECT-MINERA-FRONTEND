@@ -1,0 +1,7 @@
+{
+  "name": "PROYECT-MINERA-FRONTEND",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
