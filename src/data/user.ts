@@ -49,7 +49,17 @@ const users: User[] = [
     secondLastName: '4444',
     id_role: 3,
     id_zone: 2
-  }
+  },
+  {
+    rut: '5555',
+    password: '5555',
+    mail: '5555',
+    name: 'Patricio',
+    lastName: '5555',
+    secondLastName: '5555',
+    id_role: 2,
+    id_zone: 2
+  },
 ]
 
 export const getUsers = () => users;
