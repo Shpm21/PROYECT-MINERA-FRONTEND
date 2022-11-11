@@ -15,7 +15,7 @@ const tasks: Task[] = [
   {
     id: 2,
     description: 'Tarea 2',
-    done: false,
+    done: true,
     idMaintenanceG: 2
   },
   {
@@ -25,3 +25,16 @@ const tasks: Task[] = [
     idMaintenanceG: 3
   }
 ]
+
+export const getTasks = () => tasks;
+
+export const getTask = (id: number) => tasks.find(t => t.id === id);
+
+export const getTasksByIdMaintenanceG = (idMaintenanceG: number) => tasks.filter(t => t.idMaintenanceG === idMaintenanceG);
+
+export const changeDoneStatus = (id: number) => {
+  const task = getTask(id);
+  if (task) {
+    task.done = !task.done;
+  }
+}
