@@ -39,6 +39,14 @@ const equipments: Equipment[] = [
     idCategory: 4,
     idType: 4,
     idLocation: 4
+  },
+  {
+    id: 5,
+    description: 'Equipo 5',
+    movility: true,
+    idCategory: 2,
+    idType: 2,
+    idLocation: 3
   }
 ]
 
