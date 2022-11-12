@@ -90,7 +90,7 @@ const ViewTasksFromEquipment: React.FC = () => {
               <div>No hay tareas asignadas para este equipamiento</div>
             )
           ) : (
-            <div>Item no encontrado</div>
+            <div>Equipamiento no encontrado</div>
           )
         ) : (
           <div>Cargando...</div>
