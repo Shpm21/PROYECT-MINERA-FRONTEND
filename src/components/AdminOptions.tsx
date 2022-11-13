@@ -1,37 +1,52 @@
 import { IonIcon, IonItem, IonLabel } from '@ionic/react'
-
-const colorIcons: string = 'primary'
+import AdminOption from './AdminOption'
+import './AdminOptions.css'
 
 interface Props {
   option: string
 }
+
+interface Setting {
+  text: string
+  icon: string
+  action: string
+}
+
+const settings: Setting[] = [
+  {
+    text: 'Agregar',
+    icon: 'add-circle',
+    action: 'add'
+  },
+  {
+    text: 'Eliminar',
+    icon: 'close-circle',
+    action: 'delete'
+  },
+  {
+    text: 'Editar',
+    icon: 'pencil',
+    action: 'edit'
+  },
+  {
+    text: 'Ver Información',
+    icon: 'eye',
+    action: 'info'
+  }
+]
+
 const AdminOptions: React.FC<Props> = ({ option }) => {
   return (
     <>
-      <IonItem routerLink={`${option}/add`}>
-        <IonIcon icon="add-circle" color={colorIcons} />
-        <IonLabel>
-          <h2>Agregar</h2>
-        </IonLabel>
-      </IonItem>
-      <IonItem routerLink={`${option}/delete`}>
-        <IonIcon icon="close-circle" color={colorIcons} />
-        <IonLabel>
-          <h2>Eliminar</h2>
-        </IonLabel>
-      </IonItem>
-      <IonItem routerLink={`${option}/update`}>
-        <IonIcon icon="pencil" color={colorIcons} />
-        <IonLabel>
-          <h2>Actualizar</h2>
-        </IonLabel>
-      </IonItem>
-      <IonItem routerLink={`${option}/find`}>
-        <IonIcon icon="eye" color={colorIcons} />
-        <IonLabel>
-          <h2>Ver información</h2>
-        </IonLabel>
-      </IonItem>
+      {settings.map((setting, index) => (
+        <AdminOption
+          key={index}
+          option={option}
+          text={setting.text}
+          icon={setting.icon}
+          action={setting.action}
+        />
+      ))}
     </>
   )
 }
