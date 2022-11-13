@@ -30,7 +30,7 @@ const settings: Setting[] = [
   },
   {
     text: 'Ver Información',
-    icon: 'eye',
+    icon: 'information-circle',
     action: 'info'
   }
 ]
