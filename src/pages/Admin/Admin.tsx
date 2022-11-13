@@ -8,16 +8,9 @@ import {
   IonRefresherContent,
   IonToolbar
 } from '@ionic/react'
-import OptionCard from './components/OptionCard'
+import ViewMenuAdmin from '../../components/ViewMenuAdmin'
+import './Admin.css'
 
-const options = [
-  'equipments',
-  'users',
-  'maintainers',
-  'types',
-  'categories',
-  'locations'
-]
 const Admin: React.FC = () => {
   const refresh = (e: CustomEvent) => {
     setTimeout(() => {
@@ -39,9 +32,7 @@ const Admin: React.FC = () => {
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
-        {options.map((option, index) => (
-          <OptionCard option={option} index={index} />
-        ))}
+        <ViewMenuAdmin />
       </IonContent>
     </IonPage>
   )
