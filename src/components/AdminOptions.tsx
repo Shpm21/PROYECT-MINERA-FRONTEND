@@ -1,4 +1,3 @@
-import { IonIcon, IonItem, IonLabel } from '@ionic/react'
 import AdminOption from './AdminOption'
 import './AdminOptions.css'
 
@@ -32,6 +31,11 @@ const settings: Setting[] = [
     text: 'Ver Información',
     icon: 'information-circle',
     action: 'info'
+  },
+  {
+    text: 'Carga masiva',
+    icon: 'cloud-upload',
+    action: 'upload'
   }
 ]
 
