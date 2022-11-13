@@ -27,6 +27,28 @@ import Planificator from './pages/Planificator/Planificator'
 import ViewEquipmentPlanificator from './pages/ViewEquipmentPlanificator/ViewEquipmentPlanificator'
 import Maintainer from './pages/Maintainer/Maintainer'
 import ViewTasksFromEquipment from './pages/ViewTasksFromEquipment/ViewTasksFromEquipment'
+import UploadCsv from './pages/UploadCsv/UploadCsv'
+import Admin from './pages/Admin/Admin'
+import AddEquipment from './pages/Admin/Equipment/AddEquipment/AddEquipment'
+import DeleteEquipment from './pages/Admin/Equipment/DeleteEquipment/DeleteEquipment'
+import FindEquipment from './pages/Admin/Equipment/FindEquipment/FindEquipment'
+import EquipmentOptions from './pages/Admin/Equipment/EquipmentOptions/EquipmentOptions'
+import UserOptions from './pages/Admin/User/UserOptions/UserOptions'
+import AddUser from './pages/Admin/User/AddUser/AddUser'
+import DeleteUser from './pages/Admin/User/DeleteUser/DeleteUser'
+import FindUser from './pages/Admin/User/FindUser/FindUser'
+import AddType from './pages/Admin/Type/AddType/AddType'
+import TypeOptions from './pages/Admin/Type/TypeOptions/TypeOptions'
+import DeleteType from './pages/Admin/Type/DeleteType/DeleteType'
+import FindType from './pages/Admin/Type/FindType/FindType'
+import CategoryOptions from './pages/Admin/Category/CategoryOptions/CategoryOptions'
+import AddCategory from './pages/Admin/Category/AddCategory/AddCategory'
+import DeleteCategory from './pages/Admin/Category/DeleteCategory/DeleteCategory'
+import FindCategory from './pages/Admin/Category/FindCategory/FindCategory'
+import LocationOptions from './pages/Admin/Location/LocationOptions/LocationOptions'
+import AddLocation from './pages/Admin/Location/AddLocation/AddLocation'
+import DeleteLocation from './pages/Admin/Location/DeleteLocation/DeleteLocation'
+import FindLocation from './pages/Admin/Location/FindLocation/FindLocation'
 
 setupIonicReact()
 
@@ -40,24 +62,68 @@ const App: React.FC = () => (
         <Route path="/home" exact={true}>
           <Home />
         </Route>
-        <Route path="/message/:id">
+        <Route path="/message/:id" exact={true}>
           <ViewMessage />
         </Route>
-        <Route path="/login" exact={true}>
-          <Login />
-        </Route>
-        <Route path="/equipment_planificator/:id">
-          <ViewEquipmentPlanificator />
-        </Route>
-        <Route path="/equipment_tasks/:id">
-          <ViewTasksFromEquipment />
-        </Route>
-        <Route path="/pla">
-          <Planificator />
-        </Route>
-        <Route path="/man">
-          <Maintainer />
-        </Route>
+        <Route path="/login" exact={true} component={Login} />
+        <Route
+          path="/equipment_planificator/:id"
+          exact={true}
+          component={ViewEquipmentPlanificator}
+        />
+
+        <Route
+          path="/equipment_tasks/:id"
+          exact={true}
+          component={ViewTasksFromEquipment}
+        />
+        <Route path="/pla" exact={true} component={Planificator} />
+        <Route path="/man" exact={true} component={Maintainer} />
+        <Route path="/upload" exact={true} component={UploadCsv} />
+        {/* admin  */}
+        <Route path="/admin" component={Admin} />
+
+        {/* admin equipment */}
+        <Route exact={true} path="/equipments" component={EquipmentOptions} />
+        <Route exact={true} path="/equipments/add" component={AddEquipment} />
+        <Route
+          exact={true}
+          path="/equipments/delete"
+          component={DeleteEquipment}
+        />
+        <Route exact={true} path="/equipments/find" component={FindEquipment} />
+
+        {/* admin user */}
+        <Route exact={true} path="/users" component={UserOptions} />
+        <Route exact={true} path="/users/add" component={AddUser} />
+        <Route exact={true} path="/users/delete" component={DeleteUser} />
+        <Route exact={true} path="/users/find" component={FindUser} />
+
+        {/* admin type */}
+        <Route exact={true} path="/types" component={TypeOptions} />
+        <Route exact={true} path="/types/add" component={AddType} />
+        <Route exact={true} path="/types/delete" component={DeleteType} />
+        <Route exact={true} path="/types/find" component={FindType} />
+
+        {/* admin categories */}
+        <Route exact={true} path="/categories" component={CategoryOptions} />
+        <Route exact={true} path="/categories/add" component={AddCategory} />
+        <Route
+          exact={true}
+          path="/categories/delete"
+          component={DeleteCategory}
+        />
+        <Route exact={true} path="/categories/find" component={FindCategory} />
+
+        {/* admin locations */}
+        <Route exact={true} path="/locations" component={LocationOptions} />
+        <Route exact={true} path="/locations/add" component={AddLocation} />
+        <Route
+          exact={true}
+          path="/locations/delete"
+          component={DeleteLocation}
+        />
+        <Route exact={true} path="/locations/find" component={FindLocation} />
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
