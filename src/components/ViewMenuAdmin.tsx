@@ -15,8 +15,8 @@ const options: Option[] = [
     text: 'Usuarios'
   },
   {
-    option: 'products',
-    text: 'Productos'
+    option: 'maintenance',
+    text: 'Mantenciones'
   },
   {
     option: 'types',
