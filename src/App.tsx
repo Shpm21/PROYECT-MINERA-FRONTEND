@@ -91,19 +91,19 @@ const App: React.FC = () => (
           path="/equipments/delete"
           component={DeleteEquipment}
         />
-        <Route exact={true} path="/equipments/find" component={FindEquipment} />
+        <Route exact={true} path="/equipments/info" component={FindEquipment} />
 
         {/* admin user */}
         <Route exact={true} path="/users" component={UserOptions} />
         <Route exact={true} path="/users/add" component={AddUser} />
         <Route exact={true} path="/users/delete" component={DeleteUser} />
-        <Route exact={true} path="/users/find" component={FindUser} />
+        <Route exact={true} path="/users/info" component={FindUser} />
 
         {/* admin type */}
         <Route exact={true} path="/types" component={TypeOptions} />
         <Route exact={true} path="/types/add" component={AddType} />
         <Route exact={true} path="/types/delete" component={DeleteType} />
-        <Route exact={true} path="/types/find" component={FindType} />
+        <Route exact={true} path="/types/info" component={FindType} />
 
         {/* admin categories */}
         <Route exact={true} path="/categories" component={CategoryOptions} />
@@ -113,7 +113,7 @@ const App: React.FC = () => (
           path="/categories/delete"
           component={DeleteCategory}
         />
-        <Route exact={true} path="/categories/find" component={FindCategory} />
+        <Route exact={true} path="/categories/info" component={FindCategory} />
 
         {/* admin locations */}
         <Route exact={true} path="/locations" component={LocationOptions} />
@@ -123,7 +123,7 @@ const App: React.FC = () => (
           path="/locations/delete"
           component={DeleteLocation}
         />
-        <Route exact={true} path="/locations/find" component={FindLocation} />
+        <Route exact={true} path="/locations/info" component={FindLocation} />
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
