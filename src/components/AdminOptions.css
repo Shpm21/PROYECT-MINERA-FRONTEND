@@ -1,0 +1,7 @@
+.admin-item-option > * {
+  margin-right: 10px;
+}
+
+.admin-item-option :hover {
+  cursor: pointer;
+}
