@@ -92,6 +92,8 @@ const App: React.FC = () => (
           component={DeleteEquipment}
         />
         <Route exact={true} path="/equipments/info" component={FindEquipment} />
+        {/* upload route */}
+        <Route exact={true} path="/equipments/upload" component={UploadCsv} />
 
         {/* admin user */}
         <Route exact={true} path="/users" component={UserOptions} />
