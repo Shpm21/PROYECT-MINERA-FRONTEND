@@ -24,7 +24,7 @@ const UploadCsv: React.FC = () => {
           <IonButtons slot="start">
             <IonBackButton defaultHref="/login" icon="chevron-back-outline" />
           </IonButtons>
-          <h6>Subir csv</h6>
+          <h6>Subir CSV</h6>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
