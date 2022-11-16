@@ -11,11 +11,20 @@ import {
 } from '@ionic/react'
 import { useState } from 'react'
 import DeleteMessage from '../../../../components/DeleteMessage'
-import { Category } from '../../../../data/category'
-import ShortFormCategory from '../components/ShortFormCategory'
-
+import ShortForm from '../../../../components/ShortForm'
+import { Category, getCategory } from '../../../../data/category'
 const DeleteCategory: React.FC = () => {
   const [category, setCategory] = useState<Category>()
+  const [id, setId] = useState<string>('')
+
+  const handleButton = () => {
+    const c = getCategory(parseInt(id, 10))
+    setCategory(c)
+  }
+
+  const changeFunctions = (ev: any) => {
+    setId(ev.detail.value!)
+  }
 
   const refresh = (e: CustomEvent) => {
     setTimeout(() => {
@@ -37,10 +46,10 @@ const DeleteCategory: React.FC = () => {
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
-        <ShortFormCategory
-          setCategory={setCategory}
-          textButton="Eliminar"
-          placeholder="ID"
+        <ShortForm
+          handleButton={handleButton}
+          changeFunctions={changeFunctions}
+          keyMenuAdminText={'category'}
         />
         {category ? (
           <>
