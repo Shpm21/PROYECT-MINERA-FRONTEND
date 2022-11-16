@@ -11,12 +11,21 @@ import {
 } from '@ionic/react'
 import { useState } from 'react'
 import DeleteMessage from '../../../../components/DeleteMessage'
-import { Type } from '../../../../data/type'
-import ShortFormType from '../components/ShortFormType'
+import ShortForm from '../../../../components/ShortForm'
+import { getType, Type } from '../../../../data/type'
 
 const DeleteType: React.FC = () => {
   const [type, setType] = useState<Type>()
+  const [id, setId] = useState<string>('')
 
+  const handleButton = () => {
+    const t = getType(parseInt(id, 10))
+    setType(t)
+  }
+
+  const changeFunctions = (ev: any) => {
+    setId(ev.detail.value!)
+  }
   const refresh = (e: CustomEvent) => {
     setTimeout(() => {
       e.detail.complete()
@@ -37,10 +46,10 @@ const DeleteType: React.FC = () => {
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
-        <ShortFormType
-          setType={setType}
-          textButton="Eliminar"
-          placeholder="ID"
+        <ShortForm
+          handleButton={handleButton}
+          changeFunctions={changeFunctions}
+          keyMenuAdminText={'type'}
         />
         {type ? (
           <>
