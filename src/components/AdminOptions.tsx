@@ -24,7 +24,7 @@ const settings: Setting[] = [
   },
   {
     text: 'Editar',
-    icon: 'pencil',
+    icon: 'color-wand',
     action: 'edit'
   },
   {
