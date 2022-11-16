@@ -11,7 +11,8 @@ import {
 } from '@ionic/react'
 import { useState } from 'react'
 import { Equipment, getEquipments } from '../../data/equipment'
-import EquipmentItem from './components/EquipmentItem'
+import EquipmentItem from '../../components/EquipmentItem'
+import ViewEquipment from '../../components/ViewEquipment'
 
 const Planificator: React.FC = () => {
   const [equipments, setEquipments] = useState<Equipment[]>([])
@@ -39,9 +40,7 @@ const Planificator: React.FC = () => {
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
-        {equipments.map((equipment) => (
-          <EquipmentItem key={equipment.id} equipment={equipment} />
-        ))}
+        <ViewEquipment equipments={equipments} userType="planificator" />
       </IonContent>
     </IonPage>
   )
