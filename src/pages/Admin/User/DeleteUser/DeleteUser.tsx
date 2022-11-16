@@ -11,11 +11,21 @@ import {
 } from '@ionic/react'
 import { useState } from 'react'
 import DeleteMessage from '../../../../components/DeleteMessage'
-import { User } from '../../../../data/user'
-import ShortFormUser from '../components/ShortFormUser'
+import ShortForm from '../../../../components/ShortForm'
+import { getUser, User } from '../../../../data/user'
 
 const DeleteUser: React.FC = () => {
   const [user, setUser] = useState<User>()
+  const [rut, setRut] = useState<string>('')
+
+  const handleButton = () => {
+    const u = getUser(rut)
+    setUser(u)
+  }
+
+  const changeFunctions = (ev: any) => {
+    setRut(ev.detail.value!)
+  }
 
   const refresh = (e: CustomEvent) => {
     setTimeout(() => {
@@ -37,10 +47,10 @@ const DeleteUser: React.FC = () => {
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
-        <ShortFormUser
-          setUser={setUser}
-          textButton="Eliminar"
-          placeholder="Rut"
+        <ShortForm
+          handleButton={handleButton}
+          changeFunctions={changeFunctions}
+          keyMenuAdminText={'user'}
         />
         {user ? (
           <>

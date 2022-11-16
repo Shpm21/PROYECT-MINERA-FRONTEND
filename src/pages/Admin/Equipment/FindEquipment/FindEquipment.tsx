@@ -10,12 +10,22 @@ import {
   IonToolbar
 } from '@ionic/react'
 import { useState } from 'react'
-import ShortFormEquipment from '../components/ShortFormEquipment'
-import { Equipment } from '../../../../data/equipment'
+import ShortForm from '../../../../components/ShortForm'
+import { Equipment, getEquipment } from '../../../../data/equipment'
 import ShowEquipmentInformation from './components/ShowEquipmentInformation'
 
 const FindEquipment: React.FC = () => {
   const [equipment, setEquipment] = useState<Equipment>()
+  const [id, setId] = useState<string>('')
+
+  const handleButton = () => {
+    const e = getEquipment(parseInt(id, 10))
+    setEquipment(e)
+  }
+
+  const changeFunctions = (ev: any) => {
+    setId(ev.detail.value!)
+  }
 
   const refresh = (e: CustomEvent) => {
     setTimeout(() => {
@@ -37,10 +47,10 @@ const FindEquipment: React.FC = () => {
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
-        <ShortFormEquipment
-          setEquipment={setEquipment}
-          textButton="Buscar"
-          placeholder="ID"
+        <ShortForm
+          handleButton={handleButton}
+          changeFunctions={changeFunctions}
+          keyMenuAdminText={'equipment'}
         />
         {equipment ? (
           <ShowEquipmentInformation equipment={equipment} />

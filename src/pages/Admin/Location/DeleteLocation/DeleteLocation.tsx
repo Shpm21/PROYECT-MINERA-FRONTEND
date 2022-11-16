@@ -11,11 +11,21 @@ import {
 } from '@ionic/react'
 import { useState } from 'react'
 import DeleteMessage from '../../../../components/DeleteMessage'
-import { Location } from '../../../../data/location'
-import ShortFormLocation from '../components/ShortFormLocation'
+import ShortForm from '../../../../components/ShortForm'
+import { getLocation, Location } from '../../../../data/location'
 
 const DeleteLocation: React.FC = () => {
   const [location, setLocation] = useState<Location>()
+  const [id, setId] = useState<string>('')
+
+  const handleButton = () => {
+    const l = getLocation(parseInt(id, 10))
+    setLocation(l)
+  }
+
+  const changeFunctions = (ev: any) => {
+    setId(ev.detail.value!)
+  }
 
   const refresh = (e: CustomEvent) => {
     setTimeout(() => {
@@ -37,10 +47,10 @@ const DeleteLocation: React.FC = () => {
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
-        <ShortFormLocation
-          setLocation={setLocation}
-          textButton="Eliminar"
-          placeholder="ID"
+        <ShortForm
+          handleButton={handleButton}
+          changeFunctions={changeFunctions}
+          keyMenuAdminText={'location'}
         />
         {location ? (
           <>

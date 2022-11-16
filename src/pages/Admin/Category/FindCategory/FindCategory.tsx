@@ -10,12 +10,22 @@ import {
   IonToolbar
 } from '@ionic/react'
 import { useState } from 'react'
-import { Category } from '../../../../data/category'
-import ShortFormCategory from '../components/ShortFormCategory'
+import ShortForm from '../../../../components/ShortForm'
+import { Category, getCategory } from '../../../../data/category'
 import ShowCategoryInformation from './components/ShowCategoryInformation'
 
 const FindCategory: React.FC = () => {
   const [category, setCategory] = useState<Category>()
+  const [id, setId] = useState<string>('')
+
+  const handleButton = () => {
+    const c = getCategory(parseInt(id, 10))
+    setCategory(c)
+  }
+
+  const changeFunctions = (ev: any) => {
+    setId(ev.detail.value!)
+  }
 
   const refresh = (e: CustomEvent) => {
     setTimeout(() => {
@@ -37,16 +47,16 @@ const FindCategory: React.FC = () => {
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
-        <ShortFormCategory
-          setCategory={setCategory}
-          textButton="Buscar"
-          placeholder="ID"
+        <ShortForm
+          handleButton={handleButton}
+          changeFunctions={changeFunctions}
+          keyMenuAdminText={'category'}
         />
         {category ? (
           <ShowCategoryInformation category={category} />
         ) : (
           <>
-            <IonItem>Ingresa un Rut válido por favor</IonItem>
+            <IonItem>Ingresa un ID válido por favor</IonItem>
           </>
         )}
       </IonContent>
