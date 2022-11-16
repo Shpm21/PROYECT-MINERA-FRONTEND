@@ -10,8 +10,8 @@ import {
   useIonViewWillEnter
 } from '@ionic/react'
 import { useState } from 'react'
+import ViewEquipment from '../../components/ViewEquipment'
 import { Equipment, getEquipments } from '../../data/equipment'
-import ViewEquipment from './components/ViewEquipment'
 
 const Maintainer: React.FC = () => {
   const [equipments, setEquipments] = useState<Equipment[]>([])
@@ -39,7 +39,7 @@ const Maintainer: React.FC = () => {
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
-        <ViewEquipment equipments={equipments} />
+        <ViewEquipment equipments={equipments} userType="tasks" />
       </IonContent>
     </IonPage>
   )
