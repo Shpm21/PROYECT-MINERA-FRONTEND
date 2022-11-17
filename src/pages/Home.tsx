@@ -1,4 +1,4 @@
-import MessageListItem from '../components/MessageListItem'
+import MessageListItem from '../components/common/MessageListItem'
 import { useState } from 'react'
 import { Message, getMessages } from '../data/messages'
 import {

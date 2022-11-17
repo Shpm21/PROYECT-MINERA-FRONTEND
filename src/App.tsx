@@ -1,6 +1,6 @@
-import { Redirect, Route } from 'react-router-dom'
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react'
 import { IonReactRouter } from '@ionic/react-router'
+import { Redirect, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import ViewMessage from './pages/ViewMessage'
 
@@ -13,42 +13,42 @@ import '@ionic/react/css/structure.css'
 import '@ionic/react/css/typography.css'
 
 /* Optional CSS utils that can be commented out */
-import '@ionic/react/css/padding.css'
+import '@ionic/react/css/display.css'
+import '@ionic/react/css/flex-utils.css'
 import '@ionic/react/css/float-elements.css'
+import '@ionic/react/css/padding.css'
 import '@ionic/react/css/text-alignment.css'
 import '@ionic/react/css/text-transformation.css'
-import '@ionic/react/css/flex-utils.css'
-import '@ionic/react/css/display.css'
 
 /* Theme variables */
+import Admin from './components/views/Admin/Admin'
+import CategoryAdd from './components/views/CategoryAdd/CategoryAdd'
+import CategoryDelete from './components/views/CategoryDelete/CategoryDelete'
+import CategoryFind from './components/views/CategoryFind/CategoryFind'
+import CategoryOptions from './components/views/CategoryOptions/CategoryOptions'
+import EquipmentAdd from './components/views/EquipmentAdd/EquipmentAdd'
+import EquipmentDelete from './components/views/EquipmentDelete/EquipmentDelete'
+import EquipmentFind from './components/views/EquipmentFind/EquipmentFind'
+import EquipmentOptions from './components/views/EquipmentOptions/EquipmentOptions'
+import LocationAdd from './components/views/LocationAdd/LocationAdd'
+import LocationDelete from './components/views/LocationDelete/LocationDelete'
+import LocationFind from './components/views/LocationFind/LocationFind'
+import LocationOptions from './components/views/LocationOptions/LocationOptions'
+import Login from './components/views/Login/Login'
+import Maintainer from './components/views/Maintainer/Maintainer'
+import Planificator from './components/views/Planificator/Planificator'
+import TypeAdd from './components/views/TypeAdd/TypeAdd'
+import TypeDelete from './components/views/TypeDelete/TypeDelete'
+import TypeFind from './components/views/TypeFind/TypeFind'
+import TypeOptions from './components/views/TypeOptions/TypeOptions'
+import UploadCsv from './components/views/UploadCsv/UploadCsv'
+import UserAdd from './components/views/UserAdd/UserAdd'
+import UserDelete from './components/views/UserDelete/UserDelete'
+import UserFind from './components/views/UserFind/UserFind'
+import UserOptions from './components/views/UserOptions/UserOptions'
+import ViewEquipmentPlanificator from './components/views/ViewEquipmentPlanificator/ViewEquipmentPlanificator'
+import ViewTasksFromEquipment from './components/views/ViewTasksFromEquipment/ViewTasksFromEquipment'
 import './theme/variables.css'
-import Login from './pages/Login/Login'
-import Planificator from './pages/Planificator/Planificator'
-import ViewEquipmentPlanificator from './pages/ViewEquipmentPlanificator/ViewEquipmentPlanificator'
-import Maintainer from './pages/Maintainer/Maintainer'
-import ViewTasksFromEquipment from './pages/ViewTasksFromEquipment/ViewTasksFromEquipment'
-import UploadCsv from './pages/UploadCsv/UploadCsv'
-import Admin from './pages/Admin/Admin'
-import AddEquipment from './pages/Admin/Equipment/AddEquipment/AddEquipment'
-import DeleteEquipment from './pages/Admin/Equipment/DeleteEquipment/DeleteEquipment'
-import FindEquipment from './pages/Admin/Equipment/FindEquipment/FindEquipment'
-import EquipmentOptions from './pages/Admin/Equipment/EquipmentOptions/EquipmentOptions'
-import UserOptions from './pages/Admin/User/UserOptions/UserOptions'
-import AddUser from './pages/Admin/User/AddUser/AddUser'
-import DeleteUser from './pages/Admin/User/DeleteUser/DeleteUser'
-import FindUser from './pages/Admin/User/FindUser/FindUser'
-import AddType from './pages/Admin/Type/AddType/AddType'
-import TypeOptions from './pages/Admin/Type/TypeOptions/TypeOptions'
-import DeleteType from './pages/Admin/Type/DeleteType/DeleteType'
-import FindType from './pages/Admin/Type/FindType/FindType'
-import CategoryOptions from './pages/Admin/Category/CategoryOptions/CategoryOptions'
-import AddCategory from './pages/Admin/Category/AddCategory/AddCategory'
-import DeleteCategory from './pages/Admin/Category/DeleteCategory/DeleteCategory'
-import FindCategory from './pages/Admin/Category/FindCategory/FindCategory'
-import LocationOptions from './pages/Admin/Location/LocationOptions/LocationOptions'
-import AddLocation from './pages/Admin/Location/AddLocation/AddLocation'
-import DeleteLocation from './pages/Admin/Location/DeleteLocation/DeleteLocation'
-import FindLocation from './pages/Admin/Location/FindLocation/FindLocation'
 
 setupIonicReact()
 
@@ -85,47 +85,47 @@ const App: React.FC = () => (
 
         {/* admin equipment */}
         <Route exact={true} path="/equipments" component={EquipmentOptions} />
-        <Route exact={true} path="/equipments/add" component={AddEquipment} />
+        <Route exact={true} path="/equipments/add" component={EquipmentAdd} />
         <Route
           exact={true}
           path="/equipments/delete"
-          component={DeleteEquipment}
+          component={EquipmentDelete}
         />
-        <Route exact={true} path="/equipments/info" component={FindEquipment} />
+        <Route exact={true} path="/equipments/info" component={EquipmentFind} />
         {/* upload route */}
         <Route exact={true} path="/equipments/upload" component={UploadCsv} />
 
         {/* admin user */}
         <Route exact={true} path="/users" component={UserOptions} />
-        <Route exact={true} path="/users/add" component={AddUser} />
-        <Route exact={true} path="/users/delete" component={DeleteUser} />
-        <Route exact={true} path="/users/info" component={FindUser} />
+        <Route exact={true} path="/users/add" component={UserAdd} />
+        <Route exact={true} path="/users/delete" component={UserDelete} />
+        <Route exact={true} path="/users/info" component={UserFind} />
 
         {/* admin type */}
         <Route exact={true} path="/types" component={TypeOptions} />
-        <Route exact={true} path="/types/add" component={AddType} />
-        <Route exact={true} path="/types/delete" component={DeleteType} />
-        <Route exact={true} path="/types/info" component={FindType} />
+        <Route exact={true} path="/types/add" component={TypeAdd} />
+        <Route exact={true} path="/types/delete" component={TypeDelete} />
+        <Route exact={true} path="/types/info" component={TypeFind} />
 
         {/* admin categories */}
         <Route exact={true} path="/categories" component={CategoryOptions} />
-        <Route exact={true} path="/categories/add" component={AddCategory} />
+        <Route exact={true} path="/categories/add" component={CategoryAdd} />
         <Route
           exact={true}
           path="/categories/delete"
-          component={DeleteCategory}
+          component={CategoryDelete}
         />
-        <Route exact={true} path="/categories/info" component={FindCategory} />
+        <Route exact={true} path="/categories/info" component={CategoryFind} />
 
         {/* admin locations */}
         <Route exact={true} path="/locations" component={LocationOptions} />
-        <Route exact={true} path="/locations/add" component={AddLocation} />
+        <Route exact={true} path="/locations/add" component={LocationAdd} />
         <Route
           exact={true}
           path="/locations/delete"
-          component={DeleteLocation}
+          component={LocationDelete}
         />
-        <Route exact={true} path="/locations/info" component={FindLocation} />
+        <Route exact={true} path="/locations/info" component={LocationFind} />
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
