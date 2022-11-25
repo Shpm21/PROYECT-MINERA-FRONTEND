@@ -11,7 +11,8 @@ import {
 } from '@ionic/react'
 import { useState } from 'react'
 import ViewEquipment from '../../common/ViewEquipment'
-import { Equipment, getEquipments } from '../../../data/equipment'
+import { getEquipments } from '../../../data/equipment'
+import { Equipment } from '../../../config/interface-templates'
 
 const Maintainer: React.FC = () => {
   const [equipments, setEquipments] = useState<Equipment[]>([])

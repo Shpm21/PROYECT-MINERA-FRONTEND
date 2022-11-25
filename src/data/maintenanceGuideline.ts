@@ -1,20 +1,21 @@
-export interface MaintenanceGuideline {
-  id: number;
-  description: string;
-}
+import { MaintenanceGuideline } from "../config/interface-templates";
+
 
 const maintenanceGuidelines: MaintenanceGuideline[] = [
   {
     id: 1,
-    description: 'Guía de Mantención 1'
+    description: 'Guía de Mantención 1',
+    frequency: 1
   },
   {
     id: 2,
-    description: 'Guía de Mantención 2'
+    description: 'Guía de Mantención 2',
+    frequency: 2
   },
   {
     id: 3,
-    description: 'Guía de Mantención 3'
+    description: 'Guía de Mantención 3',
+    frequency: 3
   }
 ]
 

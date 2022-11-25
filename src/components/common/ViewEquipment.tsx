@@ -1,4 +1,4 @@
-import { Equipment } from '../../data/equipment'
+import { Equipment } from '../../config/interface-templates'
 import EquipmentItem from './EquipmentItem'
 
 interface Props {

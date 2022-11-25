@@ -1,7 +1,4 @@
-export interface Role {
-  id: number;
-  description: string;
-}
+import { Role } from "../config/interface-templates";
 
 const roles: Role[] = [
   {

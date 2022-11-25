@@ -1,7 +1,5 @@
-export interface Course {
-  id: number;
-  description: string;
-}
+import { Course } from "../config/interface-templates";
+
 
 const courses: Course[] = [
   {

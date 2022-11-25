@@ -1,12 +1,12 @@
 import { IonItem, IonLabel } from '@ionic/react'
-import { User } from '../../../../data/user'
+import { User } from '../../../../config/interface-templates'
 
 interface Props {
   user: User
 }
 
 const ShowUserInformation: React.FC<Props> = (Props) => {
-  const { rut, mail, name, lastName, secondLastName, id_role, id_zone } =
+  const { rut, email, name, lastname, secondLastname, idRole, idZone } =
     Props.user
 
   return (
@@ -18,7 +18,7 @@ const ShowUserInformation: React.FC<Props> = (Props) => {
       </IonItem>
       <IonItem>
         <IonLabel>
-          <h2>Correo: {mail}</h2>
+          <h2>Correo: {email}</h2>
         </IonLabel>
       </IonItem>
       <IonItem>
@@ -29,18 +29,18 @@ const ShowUserInformation: React.FC<Props> = (Props) => {
       <IonItem>
         <IonLabel>
           <h2>
-            Apellidos: {lastName} {secondLastName}
+            Apellidos: {lastname} {secondLastname}
           </h2>
         </IonLabel>
       </IonItem>
       <IonItem>
         <IonLabel>
-          <h2>Rol: {id_role}</h2>
+          <h2>Rol: {idRole}</h2>
         </IonLabel>
       </IonItem>
       <IonItem>
         <IonLabel>
-          <h2>Zona: {id_zone}</h2>
+          <h2>Zona: {idZone}</h2>
         </IonLabel>
       </IonItem>
     </>

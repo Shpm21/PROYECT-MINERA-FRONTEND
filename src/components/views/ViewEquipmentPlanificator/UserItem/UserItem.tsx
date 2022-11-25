@@ -1,5 +1,5 @@
 import { IonButton, IonIcon, IonItem, IonLabel } from '@ionic/react'
-import { User } from '../../../../data/user'
+import { User } from '../../../../config/interface-templates'
 import './UserItem.css'
 
 interface Props {

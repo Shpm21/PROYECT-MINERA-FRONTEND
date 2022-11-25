@@ -7,17 +7,19 @@ import {
   useIonViewWillEnter
 } from '@ionic/react'
 import { useState } from 'react'
-import { getZones, Zone } from '../../../../data/zones'
+import { Zone } from '../../../../config/interface-templates'
+import { getZones } from '../../../../data/zones'
 
 const FormLocation: React.FC = () => {
   const [id, setId] = useState('')
+  const [description, setDescription] = useState('')
   const [latitude, setLatitude] = useState('')
   const [longitude, setLongitude] = useState('')
   const [idZone, setIdZone] = useState('')
   const [zones, setZones] = useState<Zone[]>([])
 
   const enableButtonCondition = () => {
-    return id && latitude && longitude && idZone
+    return id && latitude && longitude && idZone && description
   }
 
   useIonViewWillEnter(() => {
@@ -37,6 +39,16 @@ const FormLocation: React.FC = () => {
           type="text"
           onIonChange={(ev) => {
             setId(ev.detail.value!)
+          }}
+          required
+        ></IonInput>
+      </IonItem>
+      <IonItem>
+        <IonInput
+          placeholder="Descripción"
+          type="text"
+          onIonChange={(ev) => {
+            setDescription(ev.detail.value!)
           }}
           required
         ></IonInput>

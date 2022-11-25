@@ -1,9 +1,4 @@
-export interface Zone {
-  id: number;
-  description: string;
-  latitude: number;
-  longitude: number;
-}
+import { Zone } from "../config/interface-templates";
 
 const zones: Zone[] = [
   {

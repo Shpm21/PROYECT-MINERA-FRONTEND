@@ -1,18 +1,23 @@
 import { IonItem, IonLabel } from '@ionic/react'
-import { Location } from '../../../../data/location'
+import { Location } from '../../../../config/interface-templates'
 
 interface Props {
   location: Location
 }
 
 const ShowLocationInformacion: React.FC<Props> = (Props) => {
-  const { id, latitude, longitude, idZone } = Props.location
+  const { id, description, latitude, longitude, idZone } = Props.location
 
   return (
     <>
       <IonItem>
         <IonLabel>
           <h2>ID: {id}</h2>
+        </IonLabel>
+      </IonItem>
+      <IonItem>
+        <IonLabel>
+          <h2>Descripción: {description}</h2>
         </IonLabel>
       </IonItem>
       <IonItem>

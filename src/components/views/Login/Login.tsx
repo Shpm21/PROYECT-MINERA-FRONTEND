@@ -1,19 +1,10 @@
 import { IonContent, IonPage } from '@ionic/react'
 import { useState } from 'react'
+import { User } from '../../../config/interface-templates'
 import LoginForm from './LoginForm/LoginForm'
 
-interface User {
-  rut: string
-  password: string
-  mail: string
-  name: string
-  lastName: string
-  secondLastName: string
-  id_role: number
-  id_zone: number
-}
 const Login: React.FC = () => {
-  const [user, setUser] = useState({} as User)
+  const [user, setUser] = useState<User>({} as User)
   return (
     <IonPage id="login-page">
       <IonContent>

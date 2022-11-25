@@ -7,10 +7,8 @@ import {
   IonButton
 } from '@ionic/react'
 import { useState } from 'react'
-import {
-  MaintenanceGuideline,
-  getMaintenanceGuidelines
-} from '../../../../data/maintenanceGuideline'
+import { MaintenanceGuideline } from '../../../../config/interface-templates'
+import { getMaintenanceGuidelines } from '../../../../data/maintenanceGuideline'
 
 const FormCategory: React.FC = () => {
   const [id, setId] = useState('')

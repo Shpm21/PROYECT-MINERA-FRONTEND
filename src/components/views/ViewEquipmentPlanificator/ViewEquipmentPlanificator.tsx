@@ -11,8 +11,9 @@ import {
 } from '@ionic/react'
 import { useState } from 'react'
 import { useParams } from 'react-router'
+import { Equipment } from '../../../config/interface-templates'
 import { getCategory } from '../../../data/category'
-import { Equipment, getEquipment } from '../../../data/equipment'
+import { getEquipment } from '../../../data/equipment'
 import { getType } from '../../../data/type'
 import ViewUser from './ViewUser/ViewUser'
 

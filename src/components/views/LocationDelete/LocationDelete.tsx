@@ -12,7 +12,8 @@ import {
 import { useState } from 'react'
 import DeleteMessage from '../../common/DeleteMessage'
 import ShortForm from '../../common/ShortForm'
-import { getLocation, Location } from '../../../data/location'
+import { getLocation } from '../../../data/location'
+import { Location } from '../../../config/interface-templates'
 
 const LocationDelete: React.FC = () => {
   const [location, setLocation] = useState<Location>()

@@ -11,8 +11,9 @@ import {
 } from '@ionic/react'
 import { useState } from 'react'
 import ShortForm from '../../common/ShortForm'
-import { getUser, User } from '../../../data/user'
+import { getUser } from '../../../data/user'
 import ShowUserInformation from './ShowUserInformation/ShowUserInformation'
+import { User } from '../../../config/interface-templates'
 
 const UserFind: React.FC = () => {
   const [user, setUser] = useState<User>()

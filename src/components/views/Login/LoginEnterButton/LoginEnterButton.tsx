@@ -1,11 +1,12 @@
 import { IonButton } from '@ionic/react'
 import { useEffect, useState } from 'react'
+import { User } from '../../../../config/interface-templates'
 import { getUser } from '../../../../data/user'
 
 interface Props {
   rut: string
   password: string
-  setUser(user: any): void
+  setUser(user: User): void
 }
 
 const LoginEnterButton: React.FC<Props> = (Props) => {

@@ -12,7 +12,8 @@ import {
 import { useState } from 'react'
 import DeleteMessage from '../../common/DeleteMessage'
 import ShortForm from '../../common/ShortForm'
-import { getType, Type } from '../../../data/type'
+import { getType } from '../../../data/type'
+import { Type } from '../../../config/interface-templates'
 
 const TypeDelete: React.FC = () => {
   const [type, setType] = useState<Type>()

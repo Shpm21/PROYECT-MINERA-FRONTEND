@@ -1,5 +1,5 @@
 import { IonItem, IonLabel } from '@ionic/react'
-import { Type } from '../../../../data/type'
+import { Type } from '../../../../config/interface-templates'
 
 interface Props {
   type: Type

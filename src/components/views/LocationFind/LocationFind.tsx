@@ -11,8 +11,9 @@ import {
 } from '@ionic/react'
 import { useState } from 'react'
 import ShortForm from '../../common/ShortForm'
-import { getLocation, Location } from '../../../data/location'
+import { getLocation } from '../../../data/location'
 import ShowLocationInformacion from './ShowLocationInformation/ShowLocationInformation'
+import { Location } from '../../../config/interface-templates'
 
 const LocationFind: React.FC = () => {
   const [location, setLocation] = useState<Location>()

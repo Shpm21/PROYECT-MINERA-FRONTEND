@@ -1,11 +1,5 @@
-export interface Equipment {
-  id: number;
-  description: string;
-  movility: boolean;
-  idCategory: number;
-  idType: number;
-  idLocation: number;
-}
+import { Equipment } from "../config/interface-templates";
+
 
 const equipments: Equipment[] = [
   {

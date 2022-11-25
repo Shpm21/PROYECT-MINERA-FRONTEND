@@ -12,7 +12,8 @@ import {
 import { useState } from 'react'
 import DeleteMessage from '../../common/DeleteMessage'
 import ShortForm from '../../common/ShortForm'
-import { Category, getCategory } from '../../../data/category'
+import { getCategory } from '../../../data/category'
+import { Category } from '../../../config/interface-templates'
 
 const CategoryDelete: React.FC = () => {
   const [category, setCategory] = useState<Category>()

@@ -14,13 +14,13 @@ export interface User {
   email: string
   name: string
   lastname: string
-  second_lastname: string
+  secondLastname: string
   idRole: number
-  idRone: number
+  idZone: number
 }
 
 export interface Maintenance {
-  rutUser: string
+  rut: string
   idEquipment: number
   date: string
   done: boolean

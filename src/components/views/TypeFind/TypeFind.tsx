@@ -11,8 +11,9 @@ import {
 } from '@ionic/react'
 import { useState } from 'react'
 import ShortForm from '../../common/ShortForm'
-import { getType, Type } from '../../../data/type'
+import { getType } from '../../../data/type'
 import ShowTypeInformation from './ShowTypeInformation/ShowTypeInformation'
+import { Type } from '../../../config/interface-templates'
 
 const TypeFind: React.FC = () => {
   const [type, setType] = useState<Type>()

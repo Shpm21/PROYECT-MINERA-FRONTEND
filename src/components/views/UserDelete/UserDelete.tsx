@@ -12,7 +12,8 @@ import {
 import { useState } from 'react'
 import DeleteMessage from '../../common/DeleteMessage'
 import ShortForm from '../../common/ShortForm'
-import { getUser, User } from '../../../data/user'
+import { getUser } from '../../../data/user'
+import { User } from '../../../config/interface-templates'
 
 const UserDelete: React.FC = () => {
   const [user, setUser] = useState<User>()

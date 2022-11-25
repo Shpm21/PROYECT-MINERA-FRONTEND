@@ -1,17 +1,7 @@
 import { useEffect, useState } from 'react'
+import { User } from '../../../../config/interface-templates'
 import { getUsers } from '../../../../data/user'
 import UserItem from '../UserItem/UserItem'
-
-interface User {
-  rut: string
-  password: string
-  mail: string
-  name: string
-  lastName: string
-  secondLastName: string
-  id_role: number
-  id_zone: number
-}
 
 const ViewUser: React.FC = () => {
   const [users, setUsers] = useState([] as User[])
@@ -24,7 +14,7 @@ const ViewUser: React.FC = () => {
     getUsersD()
   }, [])
 
-  const planificatorsUsers = users.filter((user) => user.id_role === 2)
+  const planificatorsUsers = users.filter((user) => user.idRole === 2)
 
   return (
     <>

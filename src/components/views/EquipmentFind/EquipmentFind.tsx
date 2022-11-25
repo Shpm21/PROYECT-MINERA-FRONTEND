@@ -11,8 +11,9 @@ import {
 } from '@ionic/react'
 import { useState } from 'react'
 import ShortForm from '../../common/ShortForm'
-import { Equipment, getEquipment } from '../../../data/equipment'
+import { getEquipment } from '../../../data/equipment'
 import ShowEquipmentInformation from './ShowEquipmentInformation/ShowEquipmentInformation'
+import { Equipment } from '../../../config/interface-templates'
 
 const EquipmentFind: React.FC = () => {
   const [equipment, setEquipment] = useState<Equipment>()

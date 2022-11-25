@@ -11,8 +11,9 @@ import {
 } from '@ionic/react'
 import { useState } from 'react'
 import ShortForm from '../../common/ShortForm'
-import { Category, getCategory } from '../../../data/category'
+import { getCategory } from '../../../data/category'
 import ShowCategoryInformation from './ShowCategoryInformation/ShowCategoryInformation'
+import { Category } from '../../../config/interface-templates'
 
 const CategoryFind: React.FC = () => {
   const [category, setCategory] = useState<Category>()

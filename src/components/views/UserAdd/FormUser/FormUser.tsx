@@ -7,8 +7,9 @@ import {
   useIonViewWillEnter
 } from '@ionic/react'
 import { useState } from 'react'
-import { getRoles, Role } from '../../../../data/role'
-import { getZones, Zone } from '../../../../data/zones'
+import { Role, Zone } from '../../../../config/interface-templates'
+import { getRoles } from '../../../../data/role'
+import { getZones } from '../../../../data/zones'
 
 const FormUser: React.FC = () => {
   const [rut, setRut] = useState('')

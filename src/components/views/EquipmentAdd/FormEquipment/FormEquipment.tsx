@@ -7,9 +7,14 @@ import {
   useIonViewWillEnter
 } from '@ionic/react'
 import { useState } from 'react'
-import { Category, getCategories } from '../../../../data/category'
-import { Location, getLocations } from '../../../../data/location'
-import { getTypes, Type } from '../../../../data/type'
+import {
+  Category,
+  Location,
+  Type
+} from '../../../../config/interface-templates'
+import { getCategories } from '../../../../data/category'
+import { getLocations } from '../../../../data/location'
+import { getTypes } from '../../../../data/type'
 
 const FormEquipment: React.FC = () => {
   const [id, setId] = useState<string>('')

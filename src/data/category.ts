@@ -1,8 +1,5 @@
-export interface Category {
-  id: number;
-  description: string;
-  idMaintenanceG: number;
-}
+import { Category } from "../config/interface-templates";
+
 
 const categories: Category[] = [
   {

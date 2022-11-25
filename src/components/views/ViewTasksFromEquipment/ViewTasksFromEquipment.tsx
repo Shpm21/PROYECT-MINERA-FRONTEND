@@ -13,8 +13,9 @@ import {
 } from '@ionic/react'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
-import { Equipment, getEquipment } from '../../../data/equipment'
-import { changeDoneStatus, getTasks, Task } from '../../../data/task'
+import { Equipment, Task } from '../../../config/interface-templates'
+import { getEquipment } from '../../../data/equipment'
+import { getTasks } from '../../../data/task'
 import './ViewTasksFromEquipment.css'
 
 const ViewTasksFromEquipment: React.FC = () => {
@@ -31,7 +32,6 @@ const ViewTasksFromEquipment: React.FC = () => {
     const t = getTasks()
     setTasks(t)
     setIsLoading(false)
-    //checkbox-outline
   })
 
   useEffect(() => {
@@ -40,7 +40,6 @@ const ViewTasksFromEquipment: React.FC = () => {
   }, [changeColor])
 
   const changeStatusTask = (task: Task) => {
-    changeDoneStatus(task.id)
     setTasks(getTasks())
     setChangeColor(!changeColor)
   }
@@ -70,7 +69,6 @@ const ViewTasksFromEquipment: React.FC = () => {
                     <IonButton
                       slot="start"
                       class="view-tasks-button"
-                      color={task.done ? 'success' : 'danger'}
                       onClick={() => {
                         changeStatusTask(task)
                       }}

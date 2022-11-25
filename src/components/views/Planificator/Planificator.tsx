@@ -10,8 +10,8 @@ import {
   useIonViewWillEnter
 } from '@ionic/react'
 import { useState } from 'react'
-import { Equipment, getEquipments } from '../../../data/equipment'
-import EquipmentItem from '../../common/EquipmentItem'
+import { Equipment } from '../../../config/interface-templates'
+import { getEquipments } from '../../../data/equipment'
 import ViewEquipment from '../../common/ViewEquipment'
 
 const Planificator: React.FC = () => {

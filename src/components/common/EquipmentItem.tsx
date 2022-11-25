@@ -1,5 +1,5 @@
 import { IonItem, IonLabel } from '@ionic/react'
-import { Equipment } from '../../data/equipment'
+import { Equipment } from '../../config/interface-templates'
 import './EquipmentItem.css'
 
 interface Props {

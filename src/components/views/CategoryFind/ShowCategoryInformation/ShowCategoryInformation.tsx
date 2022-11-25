@@ -1,5 +1,5 @@
 import { IonItem, IonLabel, useIonViewWillEnter } from '@ionic/react'
-import { Category } from '../../../../data/category'
+import { Category } from '../../../../config/interface-templates'
 
 interface Props {
   category: Category

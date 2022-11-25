@@ -1,7 +1,4 @@
-export interface Type {
-  id: number;
-  description: string;
-}
+import { Type } from "../config/interface-templates";
 
 const types: Type[] = [
   {

@@ -10,7 +10,8 @@ import {
   IonToolbar
 } from '@ionic/react'
 import { useState } from 'react'
-import { Equipment, getEquipment } from '../../../data/equipment'
+import { Equipment } from '../../../config/interface-templates'
+import { getEquipment } from '../../../data/equipment'
 import DeleteMessage from '../../common/DeleteMessage'
 import ShortForm from '../../common/ShortForm'
 
