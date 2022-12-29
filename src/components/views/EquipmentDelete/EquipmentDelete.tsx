@@ -38,7 +38,10 @@ const EquipmentDelete: React.FC = () => {
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
-            <IonBackButton defaultHref="/admin" icon="chevron-back-outline" />
+            <IonBackButton
+              defaultHref="/equipments"
+              icon="chevron-back-outline"
+            />
           </IonButtons>
           <h6>Eliminar Equipamiento</h6>
         </IonToolbar>

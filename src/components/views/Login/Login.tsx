@@ -1,21 +1,39 @@
-import { IonContent, IonPage } from '@ionic/react'
+import { IonButton, IonContent, IonPage } from '@ionic/react'
 import { useState } from 'react'
-import { User } from '../../../config/interface-templates'
+import { UserLogin } from '../../../config/interface-templates'
 import LoginForm from './LoginForm/LoginForm'
+import { Redirect } from 'react-router'
 
 const Login: React.FC = () => {
-  const [user, setUser] = useState<User>({} as User)
+  const [user, setUser] = useState<UserLogin>({} as UserLogin)
+  const sortRoleUser = () => {
+    switch (user.id_role) {
+      case 1:
+        return (
+          //redirecciona a la vista de administrador con router
+          <Redirect
+            to={{
+              pathname: '/admin'
+            }}
+          />
+        )
+      case 2:
+        return (
+          //redirecciona a la vista de administrador con router
+          <Redirect
+            to={{
+              pathname: '/pla'
+            }}
+          />
+        )
+      case 3:
+        return 'Mantenedor'
+    }
+  }
   return (
     <IonPage id="login-page">
       <IonContent>
-        {/* {!user ? (
-          <div>
-            <h1>{user.name}</h1>
-            <h1>{user.lastName}</h1>
-          </div>
-        ) : (
-          <LoginForm setUser={setUser} />
-          )} */}
+        {user ? sortRoleUser() : <></>}
         <LoginForm setUser={setUser} />
       </IonContent>
     </IonPage>

@@ -5,7 +5,7 @@ const users: User[] = [
   {
     rut: '1111',
     password: '1111',
-    email: '1111',
+    mail: '1111',
     name: 'Abigail',
     lastname: '1111',
     secondLastname: '1111',
@@ -15,7 +15,7 @@ const users: User[] = [
   {
     rut: '2222',
     password: '2222',
-    email: '2222',
+    mail: '2222',
     name: 'Juan',
     lastname: '2222',
     secondLastname: '2222',
@@ -25,7 +25,7 @@ const users: User[] = [
   {
     rut: '3333',
     password: '3333',
-    email: '3333',
+    mail: '3333',
     name: 'Miguel',
     lastname: '3333',
     secondLastname: '3333',
@@ -35,7 +35,7 @@ const users: User[] = [
   {
     rut: '4444',
     password: '4444',
-    email: '4444',
+    mail: '4444',
     name: 'Pedro',
     lastname: '4444',
     secondLastname: '4444',
@@ -45,7 +45,7 @@ const users: User[] = [
   {
     rut: '5555',
     password: '5555',
-    email: '5555',
+    mail: '5555',
     name: 'Patricio',
     lastname: '5555',
     secondLastname: '5555',

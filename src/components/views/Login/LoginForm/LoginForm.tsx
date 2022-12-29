@@ -1,11 +1,11 @@
 import { IonIcon, IonInput, IonItem, IonLabel } from '@ionic/react'
 import { useState } from 'react'
-import { User } from '../../../../config/interface-templates'
+import { UserLogin } from '../../../../config/interface-templates'
 import LoginEnterButton from '../LoginEnterButton/LoginEnterButton'
 import './LoginForm.css'
 
 interface Props {
-  setUser(user: User): void
+  setUser(user: UserLogin): void
 }
 
 const LoginForm: React.FC<Props> = (Props) => {

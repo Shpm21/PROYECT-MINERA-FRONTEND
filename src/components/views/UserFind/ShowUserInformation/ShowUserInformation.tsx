@@ -6,7 +6,7 @@ interface Props {
 }
 
 const ShowUserInformation: React.FC<Props> = (Props) => {
-  const { rut, email, name, lastname, secondLastname, idRole, idZone } =
+  const { rut, mail, name, lastname, secondLastname, idRole, idZone } =
     Props.user
 
   return (
@@ -18,7 +18,7 @@ const ShowUserInformation: React.FC<Props> = (Props) => {
       </IonItem>
       <IonItem>
         <IonLabel>
-          <h2>Correo: {email}</h2>
+          <h2>Correo: {mail}</h2>
         </IonLabel>
       </IonItem>
       <IonItem>

@@ -25,7 +25,6 @@ const Admin: React.FC = () => {
           <IonButtons slot="start">
             <IonBackButton defaultHref="/login" icon="exit-outline" />
           </IonButtons>
-          <h6>Administración</h6>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>

@@ -1,3 +1,4 @@
+import { IonButton } from '@ionic/react'
 import AdminOption from './AdminOption'
 import './AdminOptions.css'
 
@@ -39,18 +40,22 @@ const settings: Setting[] = [
   }
 ]
 
-const AdminOptions: React.FC<Props> = ({ option }) => {
+const AdminOptions: React.FC<Props> = ({
+  option,
+}) => {
   return (
     <>
-      {settings.map((setting, index) => (
-        <AdminOption
-          key={index}
-          option={option}
-          text={setting.text}
-          icon={setting.icon}
-          action={setting.action}
-        />
-      ))}
+      <div className="options-container">
+        {settings.map((setting, index) => (
+          <AdminOption
+            key={index}
+            option={option}
+            text={setting.text}
+            icon={setting.icon}
+            action={setting.action}
+          />
+        ))}
+      </div>
     </>
   )
 }

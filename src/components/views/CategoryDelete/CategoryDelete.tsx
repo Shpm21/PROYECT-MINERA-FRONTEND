@@ -39,7 +39,10 @@ const CategoryDelete: React.FC = () => {
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
-            <IonBackButton defaultHref="/admin" icon="chevron-back-outline" />
+            <IonBackButton
+              defaultHref="/categories"
+              icon="chevron-back-outline"
+            />
           </IonButtons>
           <h6>Eliminar Categoría</h6>
         </IonToolbar>

@@ -39,7 +39,10 @@ const EquipmentFind: React.FC = () => {
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
-            <IonBackButton defaultHref="/admin" icon="chevron-back-outline" />
+            <IonBackButton
+              defaultHref="/equipments"
+              icon="chevron-back-outline"
+            />
           </IonButtons>
           <h6>Ver informacion equipamiento</h6>
         </IonToolbar>

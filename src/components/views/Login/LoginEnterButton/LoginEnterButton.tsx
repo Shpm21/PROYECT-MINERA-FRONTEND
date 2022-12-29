@@ -1,32 +1,34 @@
 import { IonButton } from '@ionic/react'
-import { useEffect, useState } from 'react'
-import { User } from '../../../../config/interface-templates'
-import { getUser } from '../../../../data/user'
+import { UserLogin } from '../../../../config/interface-templates'
+import { login } from '../../../../api/login'
+import { LocalStorage } from '../../../../services/LocalStorage'
 
 interface Props {
   rut: string
   password: string
-  setUser(user: User): void
+  setUser(user: UserLogin): void
 }
 
 const LoginEnterButton: React.FC<Props> = (Props) => {
   const { rut, password, setUser } = Props
 
-  useEffect(() => {
-    const getUserByRut = (rut: string) => {
-      const us = getUser(rut)
-      if (us) {
-        setUser(us)
-      }
+  const handleLoginButton = async () => {
+    const us = await login({ rut, password })
+
+    console.log(JSON.stringify(us))
+    if (us) {
+      setUser(us)
+      LocalStorage.setToken(us.token)
     }
-  }, [rut, password])
+  }
   return (
     <IonButton
       expand="block"
-      routerLink="/home"
-      routerDirection="none"
+      // routerLink="/home"
+      // routerDirection="none"
       color="primary"
       disabled={rut === '' || password === ''}
+      onClick={handleLoginButton}
     >
       Ingresar
     </IonButton>

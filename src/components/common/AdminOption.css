@@ -1,0 +1,43 @@
+.admin-item-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  cursor: pointer;
+
+}
+
+.admin-icon-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.2rem;
+  gap: 1rem;
+}
+
+.item-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .admin-item-option {
+    padding: 1rem;
+  }
+
+  .admin-icon-option {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.5rem;
+  }
+
+  .item-container {
+    gap: 2rem;
+  }
+}

@@ -8,24 +8,25 @@ import {
   IonRefresherContent,
   IonToolbar
 } from '@ionic/react'
-import AdminOptions from '../../common/AdminOptions'
+import AdminOptions from './AdminOptions'
+import { useParams } from 'react-router'
+import { getOptionPage } from '../../config/config'
 
-const option: string = 'users'
-
-const UserOptions: React.FC = () => {
+const OptionsPage: React.FC = () => {
+  const { option } = useParams<{ option: string }>()
   const refresh = (e: CustomEvent) => {
     setTimeout(() => {
       e.detail.complete()
     }, 3000)
   }
   return (
-    <IonPage id="user-options-page">
+    <IonPage id="category-options-page">
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
             <IonBackButton defaultHref="/admin" icon="chevron-back-outline" />
           </IonButtons>
-          <h6>Opciones de usuario</h6>
+          <h6>{getOptionPage(option)}</h6>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
@@ -38,4 +39,4 @@ const UserOptions: React.FC = () => {
   )
 }
 
-export default UserOptions
+export default OptionsPage

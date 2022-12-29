@@ -11,12 +11,21 @@ export interface Course {
 export interface User {
   rut: string
   password: string
-  email: string
+  mail: string
   name: string
   lastname: string
   secondLastname: string
   idRole: number
   idZone: number
+}
+
+export interface UserLogin {
+  rut: string
+  mail: string
+  password: string
+  id_role: number
+  token: string
+  refreshToken: string
 }
 
 export interface Maintenance {
